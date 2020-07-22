@@ -1,16 +1,18 @@
 const express = require('express');
-const account = require('./routes/api/account');
+const account = require('./routes/account');
 
 const port = process.env.PORT || 3000;
 
 const app = express();
+app.set('view engine', 'pug');
+app.set('views', 'src/views');
 
 
-app.use('/api/account', account);
+app.use('/account', account);
 
 
 app.use((req, res) => {
-    res.send(`Welcome`);
+    res.render('index.pug');
 });
 
 app.listen(port, () => {
