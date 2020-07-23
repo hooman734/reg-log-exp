@@ -1,4 +1,4 @@
-const express = require('express');
+import express;
 const account = require('./routes/account');
 
 const port = process.env.PORT || 3000;
